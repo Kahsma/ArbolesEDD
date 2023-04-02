@@ -1,18 +1,19 @@
-#ifndef _ARBOLBINARIOORD_H___
-#define ARBOLBINARIOORD_H___
+#ifndef _ARBOLBINARIOORDENADO_H___
+#define _ARBOLBINARIOORDENADO_H___
 #include "NodoBinario.h"
 template <class T>
-class ArbolBinarioOrd
+class ArbolBinarioOrdenado
 {
 protected:
-    NodoBinario<T> **raiz;
+    NodoBinario<T> *raiz;
 
 public:
-    ArbolBinarioOrd();
-    - ArbolBinario0rd();
+    ArbolBinarioOrdenado();
+    ~ArbolBinarioOrdenado();
     bool esVacio();
     T datoRaiz();
     int altura();
+    int altura(NodoBinario<T> *nodo);
     int tamano();
     bool insertar(T val);
     bool eliminar(T val);
