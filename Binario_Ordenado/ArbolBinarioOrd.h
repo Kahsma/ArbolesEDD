@@ -18,6 +18,8 @@ class ArbolBinarioOrd{
     int altura();
     int altura(NodoBinario<T>* nodo);
     int tamano();
+    int tamanoRecursivo(NodoBinario<T> *nodo) const;
+    int tamano(NodoBinario<T>* nodo);
     void preOrden();
     void preOrden(NodoBinario<T>* nodo);
     void posOrden();

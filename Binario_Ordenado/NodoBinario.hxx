@@ -62,6 +62,39 @@ bool NodoBinario<T>::esHoja(){
 }
 
 template <class T>
+int NodoBinario<T>::altura()
+{
+    int valt;
+    if (this->esHoja())
+    {
+        valt = 0;
+    }
+    else
+    {
+        int valt_izq = -1;
+        int valt_der = -1;
+        if (this->hijoIzq != NULL)
+        {
+            valt_izq = this->hijoIzq->altura();
+        }
+        if (this->hijoDer != NULL)
+        {
+            valt_der = (this->hijoDer)->altura();
+        }
+        if (valt_izq > valt_der)
+        {
+            valt = valt_izq + 1;
+        }
+        else
+        {
+            valt = valt_der + 1;
+        }
+    }
+    return valt;
+}
+
+
+template <class T>
 void NodoBinario<T>::inOrder()
 {
     if (hijoIzq != NULL)
@@ -103,6 +136,28 @@ void NodoBinario<T>::posOrder()
         this->hijoDer->inOrder();
     }
     std::cout << this->dato << " ";
+}
+
+// template<class T>
+// int NodoBinario<T>::tamano() {
+//     if (node == NULL) {
+//         return 0;
+//     } else {
+//         int left_height = height(node->obtenerHijoIzquierdo());
+//         int right_height = height(node->obtenerHijoDerecho());
+//         return 1 + std::max(left_height, right_height);
+//     }
+// }
+template <class T>
+int height(NodoBinario<T>* node)
+{
+    if (node == NULL) {
+        return 0;
+    } else {
+        int left_height = height(node->obtenerHijoIzquierdo());
+        int right_height = height(node->obtenerHijoDerecho());
+        return 1 + std::max(left_height, right_height);
+    }
 }
 
 

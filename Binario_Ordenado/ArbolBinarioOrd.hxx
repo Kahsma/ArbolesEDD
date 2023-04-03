@@ -2,6 +2,8 @@
 
 #include <queue>
 
+
+
 template<class T>
 ArbolBinarioOrd<T>::ArbolBinarioOrd(){
   this->raiz = NULL;
@@ -170,11 +172,14 @@ bool ArbolBinarioOrd<T>::buscar(T val){
 
 template<class T>
 int ArbolBinarioOrd<T>::altura(){
-  if(this->esVacio()){
-    return -1;
-  }else{
-    return this->altura(this->raiz);
-  }
+    if (this->esVacio())
+    {
+        return -1;
+    }
+    else
+    {
+        return (this->raiz)->altura();
+    }
 }
 
 template<class T>
@@ -198,10 +203,22 @@ int ArbolBinarioOrd<T>::altura(NodoBinario<T>* nodo){
   return alt ;
 }
 
-template<class T>
-int ArbolBinarioOrd<T>::tamano(){
-  return 0;
-}
+// template <class T>
+// int ArbolBinarioOrd<T>::tamano() {
+//     return tamanoRecursivo(raiz);
+// }
+
+// template <class T>
+// int ArbolBinarioOrd<T>::tamanoRecursivo(NodoBinario<T>* nodo) const {
+//     if (nodo == nullptr) {
+//         return 0;
+//     } else {
+//         int tamIzq = tamanoRecursivo(nodo->obtenerHijoIzquierdo());
+//         int tamDer = tamanoRecursivo(nodo->obtenerHijoDerecho());
+//         return tamIzq + tamDer + 1;
+//     }
+// }
+
 
 // template<class T>
 // void ArbolBinarioOrd<T>::preOrden(){
@@ -237,6 +254,22 @@ int ArbolBinarioOrd<T>::tamano(){
 //     std::cout<< nodo->obtenerDato() <<" ";
 //   }
 // }
+
+template <class T>
+int ArbolBinarioOrd<T>::tamano()
+{
+  return tamano(raiz);
+}
+
+template <class T>
+int ArbolBinarioOrd<T>::tamano(NodoBinario<T>* nodo)
+{
+    if (nodo == nullptr) {
+      return 0;
+    }
+    return tamano(nodo->obtenerHijoIzquierdo()) + tamano(nodo->obtenerHijoDerecho()) + 1;
+}
+
 
 template <class T>
 void ArbolBinarioOrd<T>::preOrden()

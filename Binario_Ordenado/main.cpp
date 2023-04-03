@@ -21,4 +21,6 @@ bst.inOrden();
 bst.preOrden();
   std::cout  << std::endl;
 bst.nivelOrden();
+  std::cout  << std::endl;
+std::cout<< '\n' + bst.tamano()<<std::endl;
 }
