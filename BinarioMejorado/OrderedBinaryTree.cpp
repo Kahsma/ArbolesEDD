@@ -9,6 +9,8 @@ private:
         T data;
         TreeNode* left;
         TreeNode* right;
+
+        //Contructor
         TreeNode(T value) : data(value), left(nullptr), right(nullptr) {}
     };
 
