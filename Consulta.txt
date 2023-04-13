@@ -1,0 +1,7 @@
+Existen tres tipos principales de recorridos en un árbol binario: el recorrido en preorden, el recorrido en inorden y el recorrido en postorden. Cada uno de estos recorridos presenta características y aplicaciones específicas:
+
+Recorrido en preorden: En este recorrido, se visita primero la raíz del árbol, luego se recorre el subárbol izquierdo y finalmente se recorre el subárbol derecho. Este tipo de recorrido se utiliza para imprimir la estructura del árbol, realizar una copia exacta del árbol, evaluar expresiones matemáticas y resolver problemas de búsqueda.
+
+Recorrido en inorden: En este recorrido, se visita primero el subárbol izquierdo, luego se visita la raíz y finalmente se visita el subárbol derecho. Este tipo de recorrido se utiliza para imprimir los elementos del árbol en orden creciente o decreciente, realizar búsquedas en árboles de búsqueda binarios y evaluar expresiones matemáticas.
+
+Recorrido en postorden: En este recorrido, se visita primero el subárbol izquierdo, luego se visita el subárbol derecho y finalmente se visita la raíz. Este tipo de recorrido se utiliza para liberar la memoria de los nodos del árbol en orden inverso al que fueron creados, resolver problemas de evaluación de expresiones matemáticas y construir árboles de expresiones a partir de su representación en postorden.
